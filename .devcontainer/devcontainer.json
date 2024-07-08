@@ -1,0 +1,27 @@
+{
+  "name": "Android Development with Local SDK",
+  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/pnpm:2": {
+      "version": "8.6.5"
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/Library/Android/sdk,target=/home/vscode/android-sdk,type=bind,consistency=cached"
+  ],
+  "remoteEnv": {
+    "ANDROID_HOME": "/home/vscode/android-sdk",
+    "PATH": "${containerEnv:PATH}:/home/vscode/android-sdk/emulator:/home/vscode/android-sdk/platform-tools"
+  },
+  "postCreateCommand": "echo 'export ANDROID_HOME=/home/vscode/android-sdk' >> ~/.bashrc && echo 'export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools' >> ~/.bashrc",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.vscode-xml",
+        "vscjava.vscode-gradle",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
