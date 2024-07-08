@@ -11,9 +11,9 @@
   ],
   "remoteEnv": {
     "ANDROID_HOME": "/home/vscode/android-sdk",
-    "PATH": "${containerEnv:PATH}:/home/vscode/android-sdk/emulator:/home/vscode/android-sdk/platform-tools"
+    "PATH": "${containerEnv:PATH}:/home/vscode/android-sdk/platform-tools:/home/vscode/android-sdk/emulator"
   },
-  "postCreateCommand": "echo 'export ANDROID_HOME=/home/vscode/android-sdk' >> ~/.bashrc && echo 'export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools' >> ~/.bashrc",
+  "postCreateCommand": "echo 'export ANDROID_HOME=/home/vscode/android-sdk' >> ~/.bashrc && echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator' >> ~/.bashrc",
   "customizations": {
     "vscode": {
       "extensions": [
